@@ -19,7 +19,7 @@ app.use("/reef_waitlist", reefWaitlistRoute)
 
 mongoose.set("strictQuery", true);
 mongoose
-    .connect(process.env.MONGO_URL)
+    .connect("mongodb+srv://mongoro:mongoro@mongoro.dbwd7pc.mongodb.net/?retryWrites=true&w=majority")
     .then(() => {
         console.log("MongoDB Connected!!!")
     })
@@ -27,7 +27,7 @@ mongoose
 
 
 
-const port = process.env.PORT || 3000; 
+const port = process.env.PORT || 4000; 
 app.listen(port, () => {
     console.log('Server is running on port '+port);
 })
